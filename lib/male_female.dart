@@ -1,6 +1,8 @@
 // ignore_for_file: camel_case_types, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
+import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class male_female extends StatelessWidget {
   final IconData icon;
@@ -22,7 +24,7 @@ class male_female extends StatelessWidget {
         ),
         Text(
           label,
-          style: const TextStyle(fontSize: 18, color: Color(0xff8d8e98)),
+          style: klabeltextstyle,
         )
       ],
     );
