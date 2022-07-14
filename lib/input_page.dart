@@ -10,24 +10,15 @@ const Color activecardcolor = Color(0xff1D1F33);
 const Color inactivecardcolor = Color(0xff111328);
 const Color bottomcontainercolor = Color(0xffeb1555);
 
+enum Gender { male, female, some }
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactivecardcolor;
-  Color femaleCardColor = inactivecardcolor;
-  void changecardcolor({required int gender}) {
-    //1 male ,2 femaie
-    if (gender == 1) {
-      maleCardColor = activecardcolor;
-      femaleCardColor = inactivecardcolor;
-    } else {
-      femaleCardColor = activecardcolor;
-      maleCardColor = inactivecardcolor;
-    }
-  }
+  Gender selectedgender = Gender.some;
 
   @override
   Widget build(BuildContext context) {
@@ -42,39 +33,35 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      child: ReuseableCard(
-                        cardcolor: maleCardColor,
-                        cardchild: male_female(
-                          icon: FontAwesomeIcons.mars,
-                          label: 'MALE',
-                        ),
-                      ),
-                      onTap: () {
-                        setState(
-                          () {
-                            changecardcolor(gender: 1);
-                          },
-                        );
+                    child: ReuseableCard(
+                      onPressed: () {
+                        setState(() {
+                          selectedgender = Gender.male;
+                        });
                       },
+                      cardcolor: selectedgender == Gender.male
+                          ? activecardcolor
+                          : inactivecardcolor,
+                      cardchild: male_female(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'MALE',
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      child: ReuseableCard(
-                        cardcolor: femaleCardColor,
-                        cardchild: male_female(
-                          icon: FontAwesomeIcons.venus,
-                          label: 'FEMALE',
-                        ),
-                      ),
-                      onTap: () {
-                        setState(
-                          () {
-                            changecardcolor(gender: 2);
-                          },
-                        );
+                    child: ReuseableCard(
+                      onPressed: () {
+                        setState(() {
+                          selectedgender = Gender.female;
+                        });
                       },
+                      cardcolor: selectedgender == Gender.female
+                          ? activecardcolor
+                          : inactivecardcolor,
+                      cardchild: male_female(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
+                      ),
                     ),
                   ),
                 ],
@@ -99,6 +86,7 @@ class _InputPageState extends State<InputPage> {
                     )
                   ],
                 ),
+                onPressed: () {},
               ),
             ),
             Expanded(
@@ -124,6 +112,7 @@ class _InputPageState extends State<InputPage> {
                           )
                         ],
                       ),
+                      onPressed: () {},
                     ),
                   ),
                   Expanded(
@@ -146,6 +135,7 @@ class _InputPageState extends State<InputPage> {
                           )
                         ],
                       ),
+                      onPressed: () {},
                     ),
                   ),
                 ],
