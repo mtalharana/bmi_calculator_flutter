@@ -1,5 +1,5 @@
-// ignore_for_file: camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, unnecessary_import
-
+// ignore_for_file: camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, duplicate_ignore
+// ignore: 
 import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:bmi_calculator_flutter/reuseable_card.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,9 @@ class result extends StatelessWidget {
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
       ),
-      body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
 
           // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
@@ -29,20 +31,21 @@ class result extends StatelessWidget {
               flex: 5,
               child: ReuseableCard(
                 cardcolor: kactivecardcolor,
-                // ignore: prefer_const_literals_to_create_immutables
                 cardchild: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  // ignore: prefer_const_literals_to_create_immutables
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Text(
                       'Normal',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
                     ),
                     Text(
                       '18.3',
                       style:
-                          TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 130, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

@@ -218,7 +218,7 @@ class _InputPageState extends State<InputPage> {
                 width: double.infinity,
                 height: kbottomcontainerheight,
                 child: Text(
-                  'NextPage',
+                  'CALCULATE YOUR BMI',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 25,
