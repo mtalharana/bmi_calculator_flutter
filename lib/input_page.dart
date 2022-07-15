@@ -7,6 +7,8 @@ import 'male_female.dart';
 import 'reuseable_card.dart';
 import 'constants.dart';
 import 'result.dart';
+import 'bottom-button.dart';
+import 'round_icon.dart';
 
 enum Gender { male, female, some }
 
@@ -205,53 +207,20 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => result()));
-              },
-              child: Container(
-                alignment: Alignment.center,
-                color: kbottomcontainercolor,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(bottom: 20),
-                width: double.infinity,
-                height: kbottomcontainerheight,
-                child: Text(
-                  'CALCULATE YOUR BMI',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white),
+            buttombutton(
+              buttontitle: 'Calculate',
+              onTapped: (context) => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return result();
+                  },
                 ),
               ),
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class roundIconButton extends StatelessWidget {
-  roundIconButton({required this.icon, required this.onPressed});
-  final IconData icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPressed,
-      shape: CircleBorder(),
-      fillColor: Color(0xff4c4f5e),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      elevation: 6,
-      child: Icon(icon,
-          color: Colors.white, size: 40.0), // ignore: deprecated_member_use
     );
   }
 }

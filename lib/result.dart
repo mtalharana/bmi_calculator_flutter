@@ -1,5 +1,5 @@
 // ignore_for_file: camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, duplicate_ignore
-// ignore: 
+// ignore:
 import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:bmi_calculator_flutter/reuseable_card.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +47,7 @@ class result extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 130, fontWeight: FontWeight.bold),
                     ),
+                    Text('Your BMI is low', style: TextStyle(fontSize: 20)),
                   ],
                 ),
                 onPressed: () {
