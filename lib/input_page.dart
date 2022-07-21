@@ -1,6 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, prefer_const_constructors, camel_case_types, unused_label, unused_import
 
-import 'package:bmi_calculator_flutter/calculator_brain.dart';
 import 'package:bmi_calculator_flutter/result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,7 +9,7 @@ import 'constants.dart';
 import 'result.dart';
 import 'bottom-button.dart';
 import 'round_icon.dart';
-import 'calculator_brain.dart ';
+import 'calculator_brain.dart';
 
 enum Gender { male, female, some }
 
@@ -27,7 +26,11 @@ class _InputPageState extends State<InputPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('BMIALCULATOR'),
+          title: const Text(
+            'BMI CALCULATOR',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -211,11 +214,19 @@ class _InputPageState extends State<InputPage> {
             ),
             buttombutton(
                 onTapped: () {
+                  CalculatorBrain calc = CalculatorBrain(
+                    height: slidervalue,
+                    weight: weight.toInt(),
+                  );
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return result();
+                        return result(
+                          bmi: calc.CalculateBMI(),
+                          resulttext: calc.getresult(),
+                          interpretation: calc.getInterpretation(),
+                        );
                       },
                     ),
                   );
