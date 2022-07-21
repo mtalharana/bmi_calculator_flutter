@@ -1,5 +1,6 @@
-// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, prefer_const_constructors, camel_case_types, unused_label
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables, prefer_const_constructors, camel_case_types, unused_label, unused_import
 
+import 'package:bmi_calculator_flutter/calculator_brain.dart';
 import 'package:bmi_calculator_flutter/result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,6 +10,7 @@ import 'constants.dart';
 import 'result.dart';
 import 'bottom-button.dart';
 import 'round_icon.dart';
+import 'calculator_brain.dart ';
 
 enum Gender { male, female, some }
 
@@ -208,16 +210,17 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             buttombutton(
-              buttontitle: 'Calculate',
-              onTapped: (context) => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return result();
-                  },
-                ),
-              ),
-            ),
+                onTapped: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return result();
+                      },
+                    ),
+                  );
+                },
+                buttontitle: "Calculate"),
           ],
         ),
       ),

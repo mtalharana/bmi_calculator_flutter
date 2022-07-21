@@ -1,10 +1,11 @@
-// ignore_for_file: camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, duplicate_ignore
+// ignore_for_file: camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, duplicate_ignore, unused_import
 // ignore:
 import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:bmi_calculator_flutter/reuseable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'input_page.dart';
+import 'bottom-button.dart';
 
 class result extends StatelessWidget {
   @override
@@ -21,6 +22,8 @@ class result extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
+                padding: EdgeInsets.all(15),
+                alignment: Alignment.bottomLeft,
                 child: Text(
                   'Your Result',
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
@@ -50,7 +53,11 @@ class result extends StatelessWidget {
                     Text('Your BMI is low', style: TextStyle(fontSize: 20)),
                   ],
                 ),
-                onPressed: () {
+                onPressed: () {},
+              ),
+            ),
+            buttombutton(
+                onTapped: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -60,8 +67,7 @@ class result extends StatelessWidget {
                     ),
                   );
                 },
-              ),
-            ),
+                buttontitle: 'Re Calculate')
           ]),
     );
   }
