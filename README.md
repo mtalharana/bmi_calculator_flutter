@@ -1,16 +1,30 @@
-# bmi_calculator_flutter
+Project Name:
 
-A new Flutter project.
+5. BMI Calculator App
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Project Description:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The dice app was implemented to learn more about creating beautiful UI's, page navigation,Theme, reusable widgets, and Slider. It also uses 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Inkwell and BMI Calculation Functionality.
+
+
+
+Code:
+
+https://github.com/mtalharana/bmi_calculator_flutter
+
+
+
+
+
+Stay Tuned for my Thrilling, Consistent, and problem-solving flutter journey.
+
+
+
+Please react with Love, Comment, Repost, or send it to those you care much, about this fantastic journey.
+
+
+
