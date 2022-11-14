@@ -1,10 +1,10 @@
-Project Name:
-
-5. BMI Calculator App
 
 
+# 5. BMI Calculator App
 
-Project Description:
+
+
+
 
 The dice app was implemented to learn more about creating beautiful UI's, page navigation,Theme, reusable widgets, and Slider. It also uses 
 
